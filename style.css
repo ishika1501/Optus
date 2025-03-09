@@ -1,3 +1,22 @@
+html, body {
+    height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    cursor: none;
+    scroll-behavior: smooth;
+}
+
+.parallax-section {
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+/* ------------------------------------------------------------------------------------------------- */
 /* SECTION 0 */
 #section0 {
     display: flex;
@@ -8,6 +27,8 @@
     background: #E45C26;
     text-align: center;
 }
+
+
 
 .optus-text {
     font-size: 100px;
@@ -47,6 +68,38 @@
     height: auto;
     margin-bottom: 10px; 
 }
+
+.card-logo1 {
+    margin-top: 10px;
+    width: 120px; 
+    height: auto;
+    margin-bottom: 10px; 
+}
+
+
+.glass-card h2,
+.glass-card p {
+    position: relative;
+}
+
+
+.glass-card h2::after,
+.glass-card p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; 
+    width: 0%;
+    height: 2px;
+    background-color: rgba(255, 140, 0, 0.9);
+    transition: width 0.5s ease-in-out;
+}
+
+.glass-card:hover h2::after,
+.glass-card:hover p::after {
+    width: 100%;
+}
+
 
 #section01::after {
     content: "";
@@ -494,25 +547,19 @@
 
 
 
+/* ----------------------------------------------------------------------------------------------- */
+/* SECTION 03 - CORPORATE BUDDIES  */
 
+#section3 {
+    /* background-image: url('./assets/section2.jpg'); */
+        background-size: cover;  /* Adjusts the size to cover the section */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents repeating */
+        height: 100vh; /* Ensures the section has some height */
+        z-index: 2000;
+        background-color: #ffffff;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-/* Parallax Section */
 .parallax-section {
     position: relative;
     width: 100%;
@@ -526,19 +573,174 @@
     background-position: center;
 }
 
-/* Background Images */
+#corporate-buddies-section1 {}
 
-
-
-#section3 {
-    /* background-image: url('./assets/section2.jpg'); */
-        background-size: cover;  /* Adjusts the size to cover the section */
-        background-position: center; /* Centers the image */
-        background-repeat: no-repeat; /* Prevents repeating */
-        height: 100vh; /* Ensures the section has some height */
-        z-index: 2000;
-        background-color: #dd720d;
+.corporate-buddies-gallery-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
 }
+
+.corporate-buddies-gallery {
+    display: flex;
+    gap: 35px;
+    width: max-content;
+    animation: scrollGallery 25s linear infinite;
+}
+
+.corporate-buddies-gallery img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(209, 77, 0.5);
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.corporate-buddies-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    height: auto;
+    z-index: 10;
+}
+
+.corporate-buddies-gallery-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.corporate-buddies-bottom-section {
+    display: flex;
+    color: #000000;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+.corporate-buddies-left-content {
+    flex: 1;
+    text-align: left;
+}
+
+.corporate-buddies-page-number {
+    font-size: 15rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+}
+
+.corporate-buddies-description {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 700px;
+    margin-top: 70px;
+    text-align: left;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+.corporate-buddies-right-content {
+    flex: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.corporate-buddies-black-button {
+    background-color: black;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.corporate-buddies-black-button:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+.corporate-buddies-social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.corporate-buddies-gallery-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.corporate-buddies-gallery {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+    animation: infiniteScroll 15s linear infinite;
+}
+
+/* Gallery Images */
+.corporate-buddies-gallery img {
+    width: 250px;
+    height: 250px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 123, 0, 0.7);
+    padding: 8px;
+    background-color: white;
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Infinite Scrolling Animation */
+@keyframes infiniteScroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* Hover Effect */
+.corporate-buddies-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 85, 0, 0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------------- */
 
 #section4 {
     background-size: cover;  /* Adjusts the size to cover the section */
@@ -560,7 +762,7 @@
     background: rgba(0, 0, 0, 0.7);
 }
 
-/* Content Styling */
+
 .content {
     position: relative;
     max-width: 700px;
@@ -639,23 +841,6 @@ ul li::before {
 
 
 
-html, body {
-    height: 100%;
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    margin: 0;
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    color: white;
-    cursor: none;
-    scroll-behavior: smooth;
-}
-
-.parallax-section {
-    scroll-snap-align: start;
-    height: 100vh;
-}
 
 
 h1 {
@@ -675,17 +860,7 @@ h1 {
     font-style: italic;
 }
 
-/* Parallax Section */
-.parallax-section {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url('./assets/download.jpeg') center/cover no-repeat fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
+
 
 .overlay {
     position: absolute;
@@ -710,434 +885,3 @@ h2 {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Orange Glow Effect */
-.glow {
-    position: absolute;
-    width: 120%;
-    height: 120%;
-    top: -10%;
-    left: -10%;
-    border-radius: 20px;
-    background: radial-gradient(circle, rgba(255, 140, 0, 0.6), rgba(255, 69, 0, 0.3));
-    opacity: 0.2;
-    z-index: -1;
-    animation: glow 3s infinite alternate ease-in-out;
-}
-
-/* Blob Cursor Styling */
-/* Blob Cursor Styling */
-.blob {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    background: rgba(255, 165, 0, 0.8); /* Orange glow */
-    border-radius: 50%;
-    pointer-events: none;
-    z-index: 9999;
-    filter: blur(1px);
-    transform: translate(-0%, -0%); /* Ensures blob is centered on the cursor */
-}
-
-
-
-
-/* Position the logo closer to the cards */
-.logo-container {
-    position: absolute;
-    top: 3px; /* Adjust to move closer to the cards */
-    right: 80px; /* Adjust for fine-tuning placement */
-    width: 200px; /* Adjust size as needed */
-    height: auto;
-    z-index: 1000; /* Ensure it stays above other elements */
-}
-
-.logo-container img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-
-
-/* Center the button below the cards */
-.join-us-container {
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Styling the button */
-.join-us-btn {
-    background-color: orange;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0px 4px 10px rgba(255, 165, 0, 0.4);
-}
-
-/* Button hover effect */
-.join-us-btn:hover {
-    background-color: darkorange;
-    transform: scale(1.05);
-    box-shadow: 0px 6px 15px rgba(255, 140, 0, 0.6);
-}
-
-
-/* Glow Animation */
-@keyframes glow {
-    0% { transform: scale(1.05) rotate(0deg); }
-    50% { transform: scale(1.15) rotate(5deg); opacity: 0.4; }
-    100% { transform: scale(1.05) rotate(0deg); }
-}
-
-.card-container{
-    display: flex;
-    
-}
-
-.content {
-    position: relative;
-}
-
-.content h1 {
-    font-size: 3.5rem;
-    font-weight: bold;
-    color: #ffcc66;
-    text-shadow: 3px 3px 8px rgba(255, 140, 0, 0.554);
-    margin-bottom: 20px;
-}
-
-.content h1 span {
-    color: #ff8c00;
-}
-
-.content p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-    max-width: 1600px;
-    margin-bottom: 25px;
-}
-
-/* Initial hidden state */
-#section1 .content {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 1s ease-out, transform 0.8s ease-out;
-}
-
-
-
-/* Final state after animation triggers */
-#section1 .content.animate-content {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Initial hidden state */
-#section1 .glass-card {
-    opacity: 0;
-    transform: translateX(50px);
-    transition: opacity 2s ease-out, transform 0.7s ease-out;
-}
-
-/* Final state after animation triggers */
-#section1 .glass-card.animate-card {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-
-/* Initial hidden state */
-.content h1 {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 1.8s ease-out, transform 0.8s ease-out;
-}
-
-/* Final state after animation triggers */
-.content h1.animate-heading {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-
-/* Initial hidden state */
-.content h1 {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-/* Final state after animation triggers */
-.content h1.animate-heading {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Underline on hover with animation */
-.content h1:hover {
-    position: relative;
-}
-
-.content h1::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 3px;
-    background-color: #ffcc66;
-    transition: width 0.4s ease-in-out;
-}
-
-.content h1:hover::after {
-    width: 100%;
-}
-
-/* Apply the beating effect */
-.beating-text {
-    /* display: inline-block; */
-    animation: beat 1.5s infinite ease-in-out;
-}
-
-/* Keyframes for the beating effect */
-@keyframes beat {
-    0%, 100% {
-        transform: scale(1);
-    }
-    50% {
-        transform: scale(1.1);
-    }
-}
-
-
-/* Initial state: No underline */
-.glass-card h2,
-.glass-card p {
-    position: relative;
-    /* display: inline-block; */
-}
-
-/* Create the slow underline effect */
-.glass-card h2::after,
-.glass-card p::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px; /* Adjusts the underline position */
-    width: 0%;
-    height: 2px;
-    background-color: rgba(255, 140, 0, 0.9);
-    transition: width 0.5s ease-in-out;
-}
-
-/* When hovering, the underline expands */
-.glass-card:hover h2::after,
-.glass-card:hover p::after {
-    width: 100%;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 🌊 Section Layout */
-#coderhouse-section {
-    position: relative;
-    display: flex;
-    align-items: center; /* Vertically Center */
-    justify-content: space-between; /* Ensures left & right spacing */
-    height: 100vh;
-    overflow: hidden;
-    background: rgb(0, 0, 0); /* Dark background for contrast */
-}
-
-/* 🟠 Left Div for Animated Shape */
-.animated-shape-container {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-/* 🟠 Ultra-Realistic Moving Animated Shape */
-.animated-shape {
-    width: 400px;
-    height: 400px;
-    background: linear-gradient(135deg, rgba(255, 140, 0, 0.9), rgba(255, 90, 0, 0.7));
-    border-radius: 50%;
-    filter: blur(70px);
-    animation: shapeFlow 12s infinite linear alternate;
-}
-
-/* 🌊 Highly Irregular & Natural Water-Like Animation */
-@keyframes shapeFlow {
-    0% { transform: translate(-10px, -10px) scale(1.1) rotate(0deg); border-radius: 50% 40% 60% 50%; }
-    15% { transform: translate(15px, 20px) scale(1.05) rotate(6deg); border-radius: 60% 50% 55% 45%; }
-    30% { transform: translate(-25px, -15px) scale(1) rotate(-5deg); border-radius: 55% 45% 50% 65%; }
-    45% { transform: translate(20px, 30px) scale(1.07) rotate(8deg); border-radius: 50% 55% 45% 50%; }
-    60% { transform: translate(-30px, 10px) scale(1.12) rotate(-10deg); border-radius: 45% 50% 55% 60%; }
-    75% { transform: translate(25px, -20px) scale(1.08) rotate(5deg); border-radius: 55% 40% 60% 50%; }
-    90% { transform: translate(-20px, 25px) scale(1.03) rotate(-6deg); border-radius: 50% 55% 45% 55%; }
-    100% { transform: translate(0px, -10px) scale(1.1) rotate(0deg); border-radius: 50% 40% 60% 50%; }
-}
-
-/* 📌 Right Div for Content */
-.text-content-container {
-    flex: 1;
-    justify-content: flex-end; /* Push content more to the right */
-}
-
-.text-content {
-    z-index: 200;
-    text-align: left;
-    color: #fff;
-    padding: 10%;
-}
-
-
-/* Lottie Animation (Fixed Above Blob) */
-.lottie-animation {
-    position: absolute;
-    z-index: 200; /* Keeps it above the blob */
-}
-
-/* Blob Animation */
-@keyframes moveBlob {
-    0% {
-        transform: scale(1) translateY(0);
-    }
-    50% {
-        transform: scale(1.1) translateY(-10px);
-    }
-    100% {
-        transform: scale(1) translateY(0);
-    }
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* SECTION _3  */
-
-.iim-section {
-    position: relative;
-    padding: 60px 10%;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('your-background-image.jpg') center/cover no-repeat;
-    color: white;
-}
-
-.iim-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.2);
-}
-
-.iim-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 40px;
-}
-
- .iim-text {
-    flex: 1;
-    max-width: 50%;
-    
-}
-/*
-.iim-text h1 {
-    font-size: 3.5rem;
-    margin-bottom: 15px;
-} */
-
-.iim-text span {
-    color: #facc15; /* Gold accent color */
-}
-
-.iim-text ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-.iim-text ul li {
-    font-size: 1.1rem;
-    margin-bottom: 10px;
-    position: relative;
-    padding-left: 25px;
-}
-
-.iim-text ul li::before {
-    content: "🔸";
-    position: absolute;
-    left: 0;
-    color: #facc15;
-    font-size: 1.2rem;
-}
-
-.iim-animation {
-    flex: 1;
-    max-width: 50%;
-    display: flex;
-    justify-content: center;
-}
-
-@media (max-width: 768px) {
-    .iim-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .iim-text, .iim-animation {
-        max-width: 100%;
-    }
-}

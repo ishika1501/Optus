@@ -113,6 +113,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+document.addEventListener("DOMContentLoaded", function () {
+    const gallery = document.getElementById("corporate-buddies-gallery");
+    const images = gallery.children;
+    
+    // Duplicate the images for seamless scrolling
+    for (let i = 0; i < images.length; i++) {
+        let clone = images[i].cloneNode(true);
+        gallery.appendChild(clone);
+    }
+});
 
 
 
