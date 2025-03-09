@@ -1,0 +1,1143 @@
+/* SECTION 0 */
+#section0 {
+    display: flex;
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #E45C26;
+    text-align: center;
+}
+
+.optus-text {
+    font-size: 100px;
+    font-weight: bold;
+    color: #E45C26;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    text-shadow: 
+        6px 6px 12px rgba(0, 0, 0, 0.2),  
+        -6px -6px 12px rgba(255, 255, 255, 0.2);
+    margin-bottom: 10px; 
+}
+
+.optus-tagline {
+    font-size: 1.5rem; 
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    text-align: center;
+    max-width: 80%; 
+}
+
+
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* SECTION 01 */
+#section01 {
+    position: relative;
+    background: black; 
+    text-align: center;
+    overflow: hidden;
+}
+
+.card-logo {
+    margin-top: 40px;
+    width: 120px; 
+    height: auto;
+    margin-bottom: 10px; 
+}
+
+#section01::after {
+    content: "";
+    position: absolute;
+    bottom: -20px; 
+    left: 50%;
+    width: 120%;
+    height: 200px; 
+    background: radial-gradient(ellipse at bottom, rgba(220, 76, 3, 0.8), rgba(0, 0, 0, 0) 80%);
+    transform: translateX(-50%);
+    pointer-events: none;
+    opacity: 0.7; 
+    z-index: 0;
+}
+
+.background-text {
+    position: absolute;
+    top: 10%;
+    left: -100%;
+    white-space: nowrap; 
+    transform: translateY(-50%);
+    font-size: 90px;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1); 
+    text-transform: uppercase;
+    z-index: 2;
+    font-family: "Poppins", sans-serif;
+    opacity: 0;
+    transition: opacity 2s ease-out, left 3.5s ease-out; 
+}
+
+.show .background-text {
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+}
+
+.glass-card-container {
+    display: flex;
+    margin-top: 100px;
+    justify-content: center; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    padding: 20px; 
+}
+
+.glass-card {
+    position: relative;
+    flex: 1 1 1px; 
+    width: 280px; 
+    height: 320px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    overflow: hidden;
+    border: 2px solid rgba(255, 140, 0, 0.4);
+    box-shadow: 0px 4px 15px rgba(255, 140, 0, 0.25);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.glass-card:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0px 12px 30px rgba(255, 140, 0, 0.9);
+    border: 2px solid rgba(255, 140, 0, 0.8);
+}
+
+
+/* ----------------------------------------------------------------------------------------------- */
+
+/* SECTION 1 :CODERHOUSE  */
+
+#section1 {}
+
+.gallery-wrapper {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+}
+
+.gallery {
+    display: flex;
+    gap: 35px;
+    width: max-content;
+    animation: scrollGallery 25s linear infinite;
+}
+
+.gallery img {
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(209, 77, 0.5);
+    padding: 5px;
+    background-color: rgb(255, 255, 255);
+    object-fit: cover;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+@keyframes scrollGallery {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(228, 92, 38, 0.8);
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 120px;
+    height: auto;
+    z-index: 10;
+}
+
+.gallery-wrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.parallax-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+.bottom-section {
+    display: flex;
+    color: #000000;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+.left-content {
+    flex: 1;
+    text-align: left;
+}
+
+.page-number {
+    font-size: 15rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #333;
+    max-width: 700px;
+    margin-top: 70px;
+    text-align: left;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.right-content {
+    flex: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.black-button {
+    background-color: black;
+    color: white;
+    padding: 16px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 25px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.black-button:hover {
+    background-color: #333;
+    transform: scale(1.1);
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons a:hover {
+    background-color: #E45C26;
+    transform: scale(1.2);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 20px;
+    border-bottom: 2px solid black;
+    background-color: white;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    border-radius: 5px;
+}
+
+.carousel-control.left {
+    left: 10px;
+}
+
+.carousel-control.right {
+    right: 10px;
+}
+
+.carousel-control:hover {
+    background-color: rgba(228, 92, 38, 0.8);
+}
+
+.animated-text {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+.scroll-in-left {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-in-right {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.scroll-out-left {
+    opacity: 0;
+    transform: translateX(-50px);
+}
+
+.scroll-out-right {
+    opacity: 0;
+    transform: translateX(50px);
+}
+
+
+
+
+
+
+/* ----------------------------------------------------------------------------------------------- */
+/* SECTION 2: PATHWAY TO IIM */
+
+.header-iim {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 20px;
+    border-bottom: 2px solid black;
+    background-color: white;
+    color: #333;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    position: relative;
+}
+
+.bottom-section-iim {
+    display: flex;
+    color: #000000;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 90%;
+}
+
+.left-content-iim {
+    flex: 1;
+    text-align: left;
+    margin-left: 200px;
+    
+}
+
+.page-number-iim {
+    font-size: 15rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.1);
+    position: absolute;
+    top: 0px;
+    z-index: -1;
+}
+
+.description-iim {
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    max-width: 700px;
+    margin-top: 70px;
+    text-align: left;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1s ease-in-out forwards;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.right-content-iim {
+    flex: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.black-button-iim {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 16px 28px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 25px;
+    box-shadow: 0px 4px 10px rgba(255, 255, 255, 0.2);
+}
+
+.black-button-iim:hover {
+    background-color: rgb(255, 255, 255);
+    transform: scale(1.1);
+}
+
+.social-icons-iim {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-icons-iim a {
+    color: rgb(0, 0, 0);
+    font-size: 2rem;
+    text-decoration: none;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-icons-iim a:hover {
+    background-color: #ffffff;
+    transform: scale(1.2);
+}
+
+#section2 {
+    background-color: #E45C26;
+    background-size: cover;  /* Adjusts the size to cover the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    height: 100vh; /* Ensures the section has some height */
+    z-index: 2000;
+}
+
+
+.gallery-wrapper {
+    position: relative;
+    z-index: 12;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+/* Parallax Section */
+.parallax-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+/* Background Images */
+
+
+
+#section3 {
+    /* background-image: url('./assets/section2.jpg'); */
+        background-size: cover;  /* Adjusts the size to cover the section */
+        background-position: center; /* Centers the image */
+        background-repeat: no-repeat; /* Prevents repeating */
+        height: 100vh; /* Ensures the section has some height */
+        z-index: 2000;
+        background-color: #dd720d;
+}
+
+#section4 {
+    background-size: cover;  /* Adjusts the size to cover the section */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents repeating */
+    height: 100vh; /* Ensures the section has some height */
+    z-index: 2000;
+    background-color: #000000;
+    
+}
+
+/* Overlay Effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+/* Content Styling */
+.content {
+    position: relative;
+    max-width: 700px;
+    color: #fff;
+    z-index: 2;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #ff8c00;
+    margin-bottom: 10px;
+}
+
+h1 span {
+    color: #ffcc66;
+}
+
+p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+}
+
+ul li {
+    font-size: 1.2rem;
+    margin: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+ul li::before {
+    content: "🔸";
+    color: #ff8c00;
+    font-size: 1.5rem;
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+
+
+#cursor {
+    position: fixed; /* Crucial: keeps the "smoke" relative to the viewport, not the document */
+    top: 0;
+    left: 0;
+    pointer-events: none; /* Allow clicks to pass through the smoke */
+    z-index: 999999999; /* Ensure the smoke is on top of everything */
+  }
+  
+  .smoke {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: rgba(255, 255, 255, 0.3); /* Semi-transparent white for smoke effect */
+    border-radius: 50%; /* Make it a circle */
+    animation: fadeOut 1s forwards; /* Animate opacity to 0 */
+  }
+  
+  @keyframes fadeOut {
+    0% {
+      opacity: 1;
+      transform: scale(1); /* Start with normal size */
+    }
+    100% {
+      opacity: 0;
+      transform: scale(2);  /* Grow slightly as it fades */
+    }
+  }
+  
+
+
+
+html, body {
+    height: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    cursor: none;
+    scroll-behavior: smooth;
+}
+
+.parallax-section {
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+
+h1 {
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    /* text-shadow: 4px 4px 10px rgba(255, 140, 0, 0.8); */
+}
+
+
+
+
+.tagline {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-style: italic;
+}
+
+/* Parallax Section */
+.parallax-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('./assets/download.jpeg') center/cover no-repeat fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.75); /* Darker Overlay for Better Readability */
+}
+
+
+/* Title */
+h2 {
+    color: #ff8c00;
+    text-shadow: 2px 2px 5px rgba(25, 25, 24, 0.5);
+}
+
+/* Glow Animation */
+@keyframes glow {
+    0% { transform: scale(1.05) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(10deg); opacity: 0.6; }
+    100% { transform: scale(1.05) rotate(0deg); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Orange Glow Effect */
+.glow {
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    top: -10%;
+    left: -10%;
+    border-radius: 20px;
+    background: radial-gradient(circle, rgba(255, 140, 0, 0.6), rgba(255, 69, 0, 0.3));
+    opacity: 0.2;
+    z-index: -1;
+    animation: glow 3s infinite alternate ease-in-out;
+}
+
+/* Blob Cursor Styling */
+/* Blob Cursor Styling */
+.blob {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    background: rgba(255, 165, 0, 0.8); /* Orange glow */
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    filter: blur(1px);
+    transform: translate(-0%, -0%); /* Ensures blob is centered on the cursor */
+}
+
+
+
+
+/* Position the logo closer to the cards */
+.logo-container {
+    position: absolute;
+    top: 3px; /* Adjust to move closer to the cards */
+    right: 80px; /* Adjust for fine-tuning placement */
+    width: 200px; /* Adjust size as needed */
+    height: auto;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.logo-container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+
+/* Center the button below the cards */
+.join-us-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Styling the button */
+.join-us-btn {
+    background-color: orange;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(255, 165, 0, 0.4);
+}
+
+/* Button hover effect */
+.join-us-btn:hover {
+    background-color: darkorange;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(255, 140, 0, 0.6);
+}
+
+
+/* Glow Animation */
+@keyframes glow {
+    0% { transform: scale(1.05) rotate(0deg); }
+    50% { transform: scale(1.15) rotate(5deg); opacity: 0.4; }
+    100% { transform: scale(1.05) rotate(0deg); }
+}
+
+.card-container{
+    display: flex;
+    
+}
+
+.content {
+    position: relative;
+}
+
+.content h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: #ffcc66;
+    text-shadow: 3px 3px 8px rgba(255, 140, 0, 0.554);
+    margin-bottom: 20px;
+}
+
+.content h1 span {
+    color: #ff8c00;
+}
+
+.content p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    max-width: 1600px;
+    margin-bottom: 25px;
+}
+
+/* Initial hidden state */
+#section1 .content {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 0.8s ease-out;
+}
+
+
+
+/* Final state after animation triggers */
+#section1 .content.animate-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Initial hidden state */
+#section1 .glass-card {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 2s ease-out, transform 0.7s ease-out;
+}
+
+/* Final state after animation triggers */
+#section1 .glass-card.animate-card {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* Initial hidden state */
+.content h1 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Final state after animation triggers */
+.content h1.animate-heading {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Initial hidden state */
+.content h1 {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Final state after animation triggers */
+.content h1.animate-heading {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Underline on hover with animation */
+.content h1:hover {
+    position: relative;
+}
+
+.content h1::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 3px;
+    background-color: #ffcc66;
+    transition: width 0.4s ease-in-out;
+}
+
+.content h1:hover::after {
+    width: 100%;
+}
+
+/* Apply the beating effect */
+.beating-text {
+    /* display: inline-block; */
+    animation: beat 1.5s infinite ease-in-out;
+}
+
+/* Keyframes for the beating effect */
+@keyframes beat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+
+/* Initial state: No underline */
+.glass-card h2,
+.glass-card p {
+    position: relative;
+    /* display: inline-block; */
+}
+
+/* Create the slow underline effect */
+.glass-card h2::after,
+.glass-card p::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px; /* Adjusts the underline position */
+    width: 0%;
+    height: 2px;
+    background-color: rgba(255, 140, 0, 0.9);
+    transition: width 0.5s ease-in-out;
+}
+
+/* When hovering, the underline expands */
+.glass-card:hover h2::after,
+.glass-card:hover p::after {
+    width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 🌊 Section Layout */
+#coderhouse-section {
+    position: relative;
+    display: flex;
+    align-items: center; /* Vertically Center */
+    justify-content: space-between; /* Ensures left & right spacing */
+    height: 100vh;
+    overflow: hidden;
+    background: rgb(0, 0, 0); /* Dark background for contrast */
+}
+
+/* 🟠 Left Div for Animated Shape */
+.animated-shape-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+/* 🟠 Ultra-Realistic Moving Animated Shape */
+.animated-shape {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(135deg, rgba(255, 140, 0, 0.9), rgba(255, 90, 0, 0.7));
+    border-radius: 50%;
+    filter: blur(70px);
+    animation: shapeFlow 12s infinite linear alternate;
+}
+
+/* 🌊 Highly Irregular & Natural Water-Like Animation */
+@keyframes shapeFlow {
+    0% { transform: translate(-10px, -10px) scale(1.1) rotate(0deg); border-radius: 50% 40% 60% 50%; }
+    15% { transform: translate(15px, 20px) scale(1.05) rotate(6deg); border-radius: 60% 50% 55% 45%; }
+    30% { transform: translate(-25px, -15px) scale(1) rotate(-5deg); border-radius: 55% 45% 50% 65%; }
+    45% { transform: translate(20px, 30px) scale(1.07) rotate(8deg); border-radius: 50% 55% 45% 50%; }
+    60% { transform: translate(-30px, 10px) scale(1.12) rotate(-10deg); border-radius: 45% 50% 55% 60%; }
+    75% { transform: translate(25px, -20px) scale(1.08) rotate(5deg); border-radius: 55% 40% 60% 50%; }
+    90% { transform: translate(-20px, 25px) scale(1.03) rotate(-6deg); border-radius: 50% 55% 45% 55%; }
+    100% { transform: translate(0px, -10px) scale(1.1) rotate(0deg); border-radius: 50% 40% 60% 50%; }
+}
+
+/* 📌 Right Div for Content */
+.text-content-container {
+    flex: 1;
+    justify-content: flex-end; /* Push content more to the right */
+}
+
+.text-content {
+    z-index: 200;
+    text-align: left;
+    color: #fff;
+    padding: 10%;
+}
+
+
+/* Lottie Animation (Fixed Above Blob) */
+.lottie-animation {
+    position: absolute;
+    z-index: 200; /* Keeps it above the blob */
+}
+
+/* Blob Animation */
+@keyframes moveBlob {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.1) translateY(-10px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* SECTION _3  */
+
+.iim-section {
+    position: relative;
+    padding: 60px 10%;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('your-background-image.jpg') center/cover no-repeat;
+    color: white;
+}
+
+.iim-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.iim-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+ .iim-text {
+    flex: 1;
+    max-width: 50%;
+    
+}
+/*
+.iim-text h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+} */
+
+.iim-text span {
+    color: #facc15; /* Gold accent color */
+}
+
+.iim-text ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.iim-text ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    position: relative;
+    padding-left: 25px;
+}
+
+.iim-text ul li::before {
+    content: "🔸";
+    position: absolute;
+    left: 0;
+    color: #facc15;
+    font-size: 1.2rem;
+}
+
+.iim-animation {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .iim-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .iim-text, .iim-animation {
+        max-width: 100%;
+    }
+}
