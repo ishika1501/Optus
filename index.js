@@ -76,6 +76,11 @@ loadImages();
 
 
 
+
+
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     const elements = document.querySelectorAll(".animated-text");
     let lastScrollY = window.scrollY;
@@ -313,3 +318,33 @@ document.addEventListener('mousemove', function(e) {
         });
     }
 
+
+
+
+
+
+    const galleryIIM = document.getElementById("gallery-iim");
+
+if (galleryIIM) {  // Prevent errors if the gallery doesn't exist on some pages
+    const images = [
+        "1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg"
+    ];
+
+    function loadImages() {
+        images.forEach((imgSrc) => {
+            const img = document.createElement("img");
+            img.src = `assets/IIM/${imgSrc}`;
+            img.alt = "IIM Event Image";
+            galleryIIM.appendChild(img);
+        });
+
+        images.forEach((imgSrc) => {
+            const img = document.createElement("img");
+            img.src = `assets/IIM/${imgSrc}`;
+            img.alt = "IIM Event Image";
+            galleryIIM.appendChild(img);
+        });
+    }
+
+    loadImages();
+}
